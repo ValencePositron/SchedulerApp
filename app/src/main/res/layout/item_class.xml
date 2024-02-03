@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Class name -->
+    <TextView
+        android:id="@+id/textClassName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Class Name"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <!-- Other class details (e.g., time, location) -->
+
+    <TextView
+        android:id="@+id/textClassTime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Class Time"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textClassLocation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Class Location"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+</LinearLayout>
