@@ -6,17 +6,51 @@
     android:layout_height="match_parent"
     tools:context=".ui.gallery.AssignmentFragment">
 
-    <TextView
-        android:id="@+id/text_gallery"
+    <!-- List view or RecyclerView to display classes -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/assignmentRecyclerView"
         android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/btnAddAssignment"
+        android:padding="8dp"
+        android:clipToPadding="false"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/item_class" />
+
+    <!-- Button to add a new class -->
+    <Button
+        android:id="@+id/btnAddAssignment"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="Add Assignment"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Button to remove classes -->
+    <Button
+        android:id="@+id/btnRemoveAssignment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Remove Assignment"
+        app:layout_constraintTop_toTopOf="@id/btnAddAssignment"
+        app:layout_constraintEnd_toEndOf="@id/btnAddAssignment"
+        android:layout_marginEnd="-16dp"
+        android:layout_marginTop="-48dp"
+        />
+
+    <!-- Button to edit classes -->
+    <Button
+        android:id="@+id/btnEditAssignment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-96dp"
+        android:layout_marginEnd="-16dp"
+        android:text="Edit Assignment"
+        app:layout_constraintEnd_toEndOf="@id/btnAddAssignment"
+        app:layout_constraintStart_toStartOf="@+id/btnRemoveAssignment"
+        app:layout_constraintTop_toTopOf="@id/btnAddAssignment" />
 </androidx.constraintlayout.widget.ConstraintLayout>

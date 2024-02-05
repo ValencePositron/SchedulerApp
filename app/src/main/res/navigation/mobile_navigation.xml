@@ -15,7 +15,7 @@
         android:id="@+id/nav_gallery"
         android:name="com.example.schedulerapp.ui.gallery.AssignmentFragment"
         android:label="@string/menu_assignments"
-        tools:layout="@layout/fragment_gallery" />
+        tools:layout="@layout/fragment_assignment" />
 
     <fragment
         android:id="@+id/nav_slideshow"
