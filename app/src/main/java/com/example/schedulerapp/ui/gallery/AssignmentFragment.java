@@ -12,20 +12,20 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.example.schedulerapp.databinding.FragmentGalleryBinding;
 
-public class GalleryFragment extends Fragment {
+public class AssignmentFragment extends Fragment {
 
     private FragmentGalleryBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        GalleryViewModel galleryViewModel =
-                new ViewModelProvider(this).get(GalleryViewModel.class);
+        AssignmentViewModel assignmentViewModel =
+                new ViewModelProvider(this).get(AssignmentViewModel.class);
 
         binding = FragmentGalleryBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
         final TextView textView = binding.textGallery;
-        galleryViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+        assignmentViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
     }
 

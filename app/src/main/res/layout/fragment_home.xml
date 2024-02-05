@@ -6,5 +6,54 @@
     android:layout_height="match_parent"
     tools:context=".ui.home.HomeFragment">
 
+    <!-- List view or RecyclerView to display classes -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/classRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/btnAddClass"
+        android:padding="8dp"
+        android:clipToPadding="false"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/item_class" />
+
+    <!-- Button to add a new class -->
+    <Button
+        android:id="@+id/btnAddClass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="Add Class"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Button to remove classes -->
+    <Button
+        android:id="@+id/btnRemoveClass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Remove Class"
+        app:layout_constraintTop_toTopOf="@id/btnAddClass"
+        app:layout_constraintEnd_toEndOf="@id/btnAddClass"
+        android:layout_marginEnd="-16dp"
+        android:layout_marginTop="-48dp"
+        />
+
+    <!-- Button to edit classes -->
+    <Button
+        android:id="@+id/btnEditClass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-96dp"
+        android:layout_marginEnd="-16dp"
+        android:text="Edit Class"
+        app:layout_constraintEnd_toEndOf="@id/btnAddClass"
+        app:layout_constraintStart_toStartOf="@+id/btnRemoveClass"
+        app:layout_constraintTop_toTopOf="@id/btnAddClass" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

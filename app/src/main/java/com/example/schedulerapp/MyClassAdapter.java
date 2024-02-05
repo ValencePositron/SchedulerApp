@@ -36,7 +36,9 @@ public class MyClassAdapter extends RecyclerView.Adapter<MyClassAdapter.MyViewHo
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        TextView classNameTextView, classTimeTextView, classLocationTextView;
+        public TextView classNameTextView;
+        public TextView classTimeTextView;
+        public TextView classLocationTextView;
 
         public MyViewHolder(View itemView) {
             super(itemView);
@@ -44,5 +46,10 @@ public class MyClassAdapter extends RecyclerView.Adapter<MyClassAdapter.MyViewHo
             classTimeTextView = itemView.findViewById(R.id.textClassTime);
             classLocationTextView = itemView.findViewById(R.id.textClassLocation);
         }
+    }
+
+    public void submitList(List<MyClass> newList) {
+        this.classList = newList;
+        notifyDataSetChanged();
     }
 }
