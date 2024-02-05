@@ -1,4 +1,4 @@
-package com.example.schedulerapp.ui.gallery;
+package com.example.schedulerapp.ui.assigments;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
