@@ -1,35 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
+    android:layout_margin="8dp"
+    android:background="@drawable/item_border"
+    android:elevation="4dp"
+    app:cardBackgroundColor="@color/card_background_color2"
     android:padding="16dp">
 
-    <!-- Class name -->
-    <TextView
-        android:id="@+id/textAssignmentName"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Assignment Name"
-        android:textSize="18sp"
-        android:textStyle="bold" />
+        android:orientation="vertical">
 
-    <!-- Other class details (e.g., time, location) -->
+        <!-- Assignment name -->
+        <TextView
+            android:id="@+id/textAssignmentName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Assignment Name"
+            android:textSize="24sp"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/textAssignmentDate"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Assignment Due Date"
-        android:textSize="18sp"
-        android:textStyle="bold" />
+        <!-- Assignment due date -->
+        <TextView
+            android:id="@+id/textAssignmentDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Assignment Due Date"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:textStyle="italic" />
 
-    <TextView
-        android:id="@+id/textAssignmentClass"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Associated Class"
-        android:textSize="18sp"
-        android:textStyle="bold" />
-
-</LinearLayout>
+        <!-- Associated class -->
+        <TextView
+            android:id="@+id/textAssignmentClass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Associated Class"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:textStyle="italic" />
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
