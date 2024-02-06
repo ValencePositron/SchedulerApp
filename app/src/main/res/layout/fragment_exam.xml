@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.slideshow.ExamFragment">
+
+    <!-- List view or RecyclerView to display exams -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/examRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/btnAddExam"
+        android:padding="8dp"
+        android:clipToPadding="false"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/item_exam" />
+
+    <!-- Button to add a new exam -->
+    <Button
+        android:id="@+id/btnAddExam"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="Add Exam"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Button to remove exams -->
+    <Button
+        android:id="@+id/btnRemoveExam"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Remove Exam"
+        app:layout_constraintTop_toTopOf="@id/btnAddExam"
+        app:layout_constraintEnd_toEndOf="@id/btnAddExam"
+        android:layout_marginEnd="-16dp"
+        android:layout_marginTop="-48dp"
+        />
+
+    <!-- Button to edit exam title -->
+    <Button
+        android:id="@+id/btnEditExam"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-96dp"
+        android:layout_marginEnd="-16dp"
+        android:text="Edit Exam"
+        app:layout_constraintEnd_toEndOf="@id/btnAddExam"
+        app:layout_constraintStart_toStartOf="@+id/btnRemoveExam"
+        app:layout_constraintTop_toTopOf="@id/btnAddExam" />
+</androidx.constraintlayout.widget.ConstraintLayout>

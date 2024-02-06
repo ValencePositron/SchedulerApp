@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Exam name -->
+    <EditText
+        android:id="@+id/editTextExamName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Exam Name"
+        android:inputType="text" />
+
+    <!-- Exam date -->
+    <EditText
+        android:id="@+id/editTextExamDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Exam Date"
+        android:inputType="date" />
+
+    <!-- Exam time -->
+    <EditText
+        android:id="@+id/editTextExamTime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Exam Time"
+        android:inputType="time" />
+
+    <!-- Exam location -->
+    <EditText
+        android:id="@+id/editTextExamLocation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Exam Location"
+        android:inputType="text" />
+
+</LinearLayout>
