@@ -18,8 +18,7 @@
         android:id="@+id/editTextExamDate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Exam Date"
-        android:inputType="date" />
+        android:hint="Exam Date" />
 
     <!-- Exam time -->
     <EditText

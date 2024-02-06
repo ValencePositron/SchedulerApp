@@ -23,7 +23,6 @@
         android:id="@+id/editTextTaskDueDate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Due Date"
-        android:inputType="date" />
+        android:hint="Due Date" />
 
 </LinearLayout>
