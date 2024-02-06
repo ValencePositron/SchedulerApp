@@ -25,7 +25,10 @@ import com.example.schedulerapp.R;
 import com.example.schedulerapp.databinding.FragmentExamBinding;
 import com.example.schedulerapp.ui.home.HomeViewModel;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class ExamFragment extends Fragment {
@@ -114,10 +117,20 @@ public class ExamFragment extends Fragment {
                 }
 
                 // Create a new MyExam object
-                MyExam newExam = new MyExam(examName, examDate, examTime, examLocation);
+                // Validate date format
+                SimpleDateFormat dateFormat = new SimpleDateFormat("MM-dd-yyyy");
+                dateFormat.setLenient(false);
+                try {
+                    Date examDateParsed = dateFormat.parse(examDate);
+                    // Date format is valid, create a new exam
+                    MyExam newExam = new MyExam(examName, examDate, examTime, examLocation);
+                    examViewModel.addExam(newExam);
+                } catch (ParseException e) {
+                    // Date format is invalid
+                    Toast.makeText(requireContext(), "Please enter a valid date (MM-dd-yyyy)", Toast.LENGTH_SHORT).show();
+                }
 
-                // Add the new exam to the ViewModel
-                examViewModel.addExam(newExam);
+
             }
         });
 
