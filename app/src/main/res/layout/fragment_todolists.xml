@@ -1,6 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".ui.todolist.ToDoFragment">
 
+    <!-- RecyclerView to display tasks -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/taskRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:padding="8dp"
+        android:clipToPadding="false"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/btnAddTask"
+        tools:listitem="@layout/item_task" />
+
+    <!-- Button to add a new task -->
+    <Button
+        android:id="@+id/btnAddTask"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add Task"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="16dp" />
+
+    <!-- Button to remove tasks -->
+    <Button
+        android:id="@+id/btnRemoveTask"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Remove Task"
+        app:layout_constraintTop_toTopOf="@id/btnAddTask"
+        app:layout_constraintEnd_toEndOf="@id/btnAddTask"
+        android:layout_marginEnd="-16dp"
+        android:layout_marginTop="-48dp" />
+
+    <!-- Button to edit tasks -->
+    <Button
+        android:id="@+id/btnEditTask"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Edit Task"
+        app:layout_constraintEnd_toEndOf="@id/btnAddTask"
+        app:layout_constraintStart_toStartOf="@+id/btnRemoveTask"
+        app:layout_constraintTop_toTopOf="@id/btnAddTask"
+        android:layout_marginTop="-96dp"
+        android:layout_marginEnd="-16dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

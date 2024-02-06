@@ -240,6 +240,7 @@ public class ExamFragment extends Fragment {
         AlertDialog dialog = builder.create();
         dialog.show();
     }
+
     @Override
     public void onDestroyView() {
         super.onDestroyView();

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Task title -->
+    <TextView
+        android:id="@+id/textTaskTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Task Title"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <!-- Task description -->
+    <TextView
+        android:id="@+id/textTaskDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Task Description"
+        android:textSize="16sp" />
+
+    <!-- Task due date -->
+    <TextView
+        android:id="@+id/textTaskDueDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Due Date: Jan 01, 2023"
+        android:textSize="16sp" />
+
+
+</LinearLayout>

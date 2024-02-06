@@ -28,4 +28,5 @@
         android:name="com.example.schedulerapp.ui.todolist.ToDoFragment"
         android:label="@string/menu_todolists"
         tools:layout="@layout/fragment_todolists" />
+
 </navigation>

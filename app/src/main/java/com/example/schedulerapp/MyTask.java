@@ -5,15 +5,14 @@ import java.util.Date;
 public class MyTask {
     private String title;
     private String description;
-    private Date dueDate;
+    private String dueDate;
     private boolean completed;
 
     // Constructor
-    public MyTask(String title, String description, Date dueDate, boolean completed) {
+    public MyTask(String title, String description, String dueDate) {
         this.title = title;
         this.description = description;
         this.dueDate = dueDate;
-        this.completed = completed;
     }
 
     // Getters and setters
@@ -33,19 +32,12 @@ public class MyTask {
         this.description = description;
     }
 
-    public Date getDueDate() {
+    public String getDueDate() {
         return dueDate;
     }
 
-    public void setDueDate(Date dueDate) {
+    public void setDueDate(String dueDate) {
         this.dueDate = dueDate;
     }
 
-    public boolean isCompleted() {
-        return completed;
-    }
-
-    public void setCompleted(boolean completed) {
-        this.completed = completed;
-    }
 }
