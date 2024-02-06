@@ -7,7 +7,12 @@ import androidx.lifecycle.ViewModel;
 import com.example.schedulerapp.MyAssignment;
 import com.example.schedulerapp.MyClass;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.Date;
 import java.util.List;
 
 public class AssignmentViewModel extends ViewModel {
@@ -43,13 +48,58 @@ public class AssignmentViewModel extends ViewModel {
     public void updateAssignment(MyAssignment updatedAssignment) {
         List<MyAssignment> currentList = assignmentListLiveData.getValue();
         for (int i = 0; i < currentList.size(); i++) {
-            MyAssignment myAssignment = currentList.get(i);
-            if (myAssignment.getTitle().equals(updatedAssignment.getTitle())) {
-                // Update the class with the new information
+            MyAssignment assignment = currentList.get(i);
+            if (assignment.getTitle().equals(updatedAssignment.getTitle())) {
+                // Update the assignment with the new information
                 currentList.set(i, updatedAssignment);
                 assignmentListLiveData.setValue(currentList);
                 return;
             }
+        }
+    }
+
+    public void sortAssignmentsByDate() {
+        List<MyAssignment> currentList = assignmentListLiveData.getValue();
+        if (currentList != null) {
+            // Sort the list by due date using a comparator
+            Collections.sort(currentList, new Comparator<MyAssignment>() {
+                @Override
+                public int compare(MyAssignment assignment1, MyAssignment assignment2) {
+                    SimpleDateFormat dateFormat = new SimpleDateFormat("MM-dd-yyyy");
+
+// Convert date strings to Date objects
+                    Date dueDate1 = null;
+                    try {
+                        dueDate1 = dateFormat.parse(assignment1.getDueDate());
+                    } catch (ParseException e) {
+                        throw new RuntimeException(e);
+                    }
+                    Date dueDate2 = null;
+                    try {
+                        dueDate2 = dateFormat.parse(assignment2.getDueDate());
+                    } catch (ParseException e) {
+                        throw new RuntimeException(e);
+                    }
+
+// Compare due dates and return the result
+                    return dueDate1.compareTo(dueDate2);
+                }
+            });
+            // Update the LiveData with the sorted list
+            assignmentListLiveData.setValue(currentList);
+        }
+    }
+
+    public void sortAssignmentsByCourse() {
+        List<MyAssignment> assignments = assignmentListLiveData.getValue();
+        if (assignments != null) {
+            Collections.sort(assignments, new Comparator<MyAssignment>() {
+                @Override
+                public int compare(MyAssignment a1, MyAssignment a2) {
+                    return a1.getAssociatedClass().compareToIgnoreCase(a2.getAssociatedClass());
+                }
+            });
+            assignmentListLiveData.setValue(assignments);
         }
     }
 }

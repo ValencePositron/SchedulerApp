@@ -53,4 +53,26 @@
         app:layout_constraintEnd_toEndOf="@id/btnAddAssignment"
         app:layout_constraintStart_toStartOf="@+id/btnRemoveAssignment"
         app:layout_constraintTop_toTopOf="@id/btnAddAssignment" />
+
+    <Button
+        android:id="@+id/btnSortByDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-144dp"
+        android:layout_marginEnd="-16dp"
+        android:text="Sort By Date"
+        app:layout_constraintEnd_toEndOf="@id/btnAddAssignment"
+        app:layout_constraintStart_toStartOf="@+id/btnRemoveAssignment"
+        app:layout_constraintTop_toTopOf="@id/btnAddAssignment" />
+
+    <Button
+        android:id="@+id/btnSortByCourse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-192dp"
+        android:layout_marginEnd="-16dp"
+        android:text="Sort By Course"
+        app:layout_constraintEnd_toEndOf="@id/btnAddAssignment"
+        app:layout_constraintStart_toStartOf="@+id/btnRemoveAssignment"
+        app:layout_constraintTop_toTopOf="@id/btnAddAssignment" />
 </androidx.constraintlayout.widget.ConstraintLayout>
